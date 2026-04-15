@@ -85,7 +85,7 @@ h2 {
 
 .review {
     justify-content: space-between;
-    x gap: 20px;
+    gap: 20px;
 }
 
 body {
@@ -123,20 +123,6 @@ body {
     color: white;
     margin: 10px 0;
     text-decoration: none;
-}
-
-.css-120nera {
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    gap: 1px;
-    height: 80px;
-}
-
-.css-1sonigm {
-    height: 80px;
-    width: 400px;
-    cursor: pointer;
 }
 
 .footer {
