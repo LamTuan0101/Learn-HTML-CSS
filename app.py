@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect
 from db import get_connection
+from livereload import Server
 
 app = Flask(__name__)
 
@@ -19,7 +20,8 @@ def login():
         if result:
             return redirect("/dashboard")
         else:
-            return "Sai tài khoản"
+            #print("Invalid credentials")  # Debugging statement
+            return render_template("login.html")
 
     return render_template("login.html")
 
@@ -37,8 +39,8 @@ def dashboard():
 
 
 # ================= ADD USER =================
-@app.route("/add", methods=["GET", "POST"])
-def add():
+@app.route("/register", methods=["GET", "POST"])
+def register():
     if request.method == "POST":
         user = request.form["username"]
         pw = request.form["password"]
@@ -54,7 +56,6 @@ def add():
 
         return redirect("/dashboard")
 
-    return render_template("add.html")
-
+    return render_template("register.html")
 
 app.run(host="0.0.0.0", port=5000, debug=True)

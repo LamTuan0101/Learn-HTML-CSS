@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Đăng kí tài khoản</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+
+<body>
+
+
+    <div class="container">
+        <form method="POST"></form>
+        <div class="register-box">
+            <h2>Vui lòng nhập thông tin</h2>
+            <!-- sửa lý logic của UserID -->
+            <div class="input-box">
+                <span class="icon"><i class="fa-solid fa-user"></i></span>
+                <input type="text" class="" name="Username" required>
+                <label class="lb">Nhập tên tài khoản</label>
+            </div>
+
+            <div class="input-box">
+                <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                <input type="text" class="" name="Mail" required>
+                <label class="lb">Nhập mail</label>
+            </div>
+
+            <div class="input-box">
+                <span class="icon"><i class="fa-solid fa-phone"></i></span>
+                <input type="text" class="" name="NumberPhone" required>
+                <label class="lb">Nhập số điện thoại</label>
+            </div>
+
+            <div class="input-box">
+                <span class="icon"><i class="fa-solid fa-lock"></i></span>
+                <input type="password" class="pass" name="password" required>
+                <label class="lb">Mật khẩu</label>
+            </div>
+
+            <!-- <input name="UserID" placeholder="id">
+            <input name="Username" placeholder="name">
+            <input name="Mail" placeholder="mail">
+            <input name="NumberPhone" placeholder="sdt">
+            <input name="password" placeholder="pass"> -->
+
+            <button>Tạo tài khoản</button>
+            <div class="register-link">
+                <p>Nếu đã có tài khoản, hãy
+                    <a href="/" ">Đăng nhập</a></p>
+            </div>
+        </div>
+        </form>
+    </div>
+
+</body>
+
+</html>
