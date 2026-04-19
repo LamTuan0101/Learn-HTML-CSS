@@ -11,46 +11,43 @@
 
 
     <div class="container">
-        <form method="POST"></form>
-        <div class="register-box">
-            <h2>Vui lòng nhập thông tin</h2>
-            <!-- sửa lý logic của UserID -->
-            <div class="input-box">
-                <span class="icon"><i class="fa-solid fa-user"></i></span>
-                <input type="text" class="" name="Username" required>
-                <label class="lb">Nhập tên tài khoản</label>
-            </div>
+        <form method="POST">
+            <div class="register-box">
+                <h2>Vui lòng nhập thông tin</h2>
+                <!-- sửa lý logic của UserID -->
 
-            <div class="input-box">
-                <span class="icon"><i class="fa-solid fa-envelope"></i></span>
-                <input type="text" class="" name="Mail" required>
-                <label class="lb">Nhập mail</label>
-            </div>
 
-            <div class="input-box">
-                <span class="icon"><i class="fa-solid fa-phone"></i></span>
-                <input type="text" class="" name="NumberPhone" required>
-                <label class="lb">Nhập số điện thoại</label>
-            </div>
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-user"></i></span>
+                    <input name="name" type="text" class="" required>
+                    <label class="lb">Nhập tên tài khoản</label>
+                </div>
 
-            <div class="input-box">
-                <span class="icon"><i class="fa-solid fa-lock"></i></span>
-                <input type="password" class="pass" name="password" required>
-                <label class="lb">Mật khẩu</label>
-            </div>
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                    <input name="mail" type="text" class="" required>
+                    <label class="lb">Nhập mail</label>
+                </div>
 
-            <!-- <input name="UserID" placeholder="id">
-            <input name="Username" placeholder="name">
-            <input name="Mail" placeholder="mail">
-            <input name="NumberPhone" placeholder="sdt">
-            <input name="password" placeholder="pass"> -->
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-phone"></i></span>
+                    <input name="numberphone" type="text" class="" required>
+                    <label class="lb">Nhập số điện thoại</label>
+                </div>
 
-            <button>Tạo tài khoản</button>
-            <div class="register-link">
-                <p>Nếu đã có tài khoản, hãy
-                    <a href="/" ">Đăng nhập</a></p>
+                <div class="input-box">
+                    <span class="icon"><i class="fa-solid fa-lock"></i></span>
+                    <input name="password" type="password" class="pass" required>
+                    <label class="lb">Mật khẩu</label>
+                </div>
+
+                <button type="submit">Tạo tài khoản</button>
+                <div class="register-link">
+                    <p>Nếu đã có tài khoản, hãy
+                        <a href="/">Đăng nhập</a>
+                    </p>
+                </div>
             </div>
-        </div>
         </form>
     </div>
 
