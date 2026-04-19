@@ -28,7 +28,7 @@
 .register-box {
     position: relative;
     width: 500px;
-    height: 600px;
+    height: 700px;
     background: transparent;
     border-radius: 12px;
     border: 2px solid rgba(255, 255, 255, 0.5);
@@ -42,7 +42,7 @@
 .login-box {
     position: relative;
     width: 500px;
-    height: 550px;
+    height: 600px;
     background: transparent;
     border-radius: 12px;
     border: 2px solid rgba(255, 255, 255, 0.5);

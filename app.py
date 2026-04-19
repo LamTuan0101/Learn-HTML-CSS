@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect
 from db import get_connection
 from livereload import Server
+import uuid
 
 app = Flask(__name__)
 
@@ -10,6 +11,7 @@ def login():
     if request.method == "POST":
         user = request.form["username"]
         pw = request.form["password"]
+        error = None
 
         conn = get_connection()
         cursor = conn.cursor()
@@ -20,8 +22,8 @@ def login():
         if result:
             return redirect("/dashboard")
         else:
-            #print("Invalid credentials")  # Debugging statement
-            return render_template("login.html")
+            error = "Tải khoản hoặc mật khẩu không đúng!" 
+            
 
     return render_template("login.html")
 
@@ -42,8 +44,22 @@ def dashboard():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
-        user = request.form["username"]
-        pw = request.form["password"]
+        uid = "U" + str(uuid.uuid4())[:5] 
+        name = request.form.get("name")
+        mail = request.form.get("mail")
+        np = request.form.get("numberphone")
+        pw = request.form.get("password")
+
+        # if not name or not mail or not np or not pw:
+        #     if not name:
+        #         return "Name is missing"
+        #     if not mail:
+        #         return "Email is missing"
+        #     if not np:
+        #         return "Phone is missing"
+        #     if not pw:
+        #         return "Password is missing"
+        #     return "Thiếu dữ liệu!"
 
         conn = get_connection()
         cursor = conn.cursor()
@@ -51,11 +67,18 @@ def register():
         cursor.execute("""
             INSERT INTO Users(User_ID, Name, Email, Phone, Password)
             VALUES (?, ?, ?, ?, ?)
-        """, ("U011", "Test", user, user, pw))
+        """, (uid, name, mail, np, pw))
         conn.commit()
 
-        return redirect("/dashboard")
+        return redirect("/")  
 
     return render_template("register.html")
+
+# @app.route("/forgotpass", methods=["GET", "POST"])
+# def forgot():
+#     if request.method == "POST":
+#         mail = request.form.get("mail")
+#         pass = request.form.get("password")
+#     return render_template("forgotpass.html")
 
 app.run(host="0.0.0.0", port=5000, debug=True)
