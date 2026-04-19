@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect
 from db import get_connection
 from livereload import Server
 import uuid
-
+ 
 app = Flask(__name__)
 
 # ================= LOGIN =================
@@ -11,7 +11,7 @@ def login():
     if request.method == "POST":
         user = request.form["username"]
         pw = request.form["password"]
-        error = None
+        error = "Tuan"
 
         conn = get_connection()
         cursor = conn.cursor()
