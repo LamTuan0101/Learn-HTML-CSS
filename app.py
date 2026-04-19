@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request, redirect
 from db import get_connection
 from livereload import Server
-import uuid
 
 app = Flask(__name__)
 
@@ -11,7 +10,6 @@ def login():
     if request.method == "POST":
         user = request.form["username"]
         pw = request.form["password"]
-        error = None
 
         conn = get_connection()
         cursor = conn.cursor()
@@ -22,8 +20,8 @@ def login():
         if result:
             return redirect("/dashboard")
         else:
-            error = "Tải khoản hoặc mật khẩu không đúng!" 
-            
+            #print("Invalid credentials")  # Debugging statement
+            return render_template("login.html")
 
     return render_template("login.html")
 
