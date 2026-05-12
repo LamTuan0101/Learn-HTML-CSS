@@ -1,0 +1,19 @@
+p {
+    color: blue;
+    /* Thuộc tính color, giá trị blue */
+    font-size: 16px;
+    /* Thuộc tính cỡ chữ, giá trị 16 pixel */
+    text-align: center;
+    /* Thuộc tính căn lề, giá trị ở giữa */
+    border: yellow solid 2px;
+    border-radius: 12px;
+    padding: 50px;
+    width: 200px;
+    /* box-sizing: border-box; */
+}
+
+input:checked+label {
+    color: grey;
+    text-decoration: line-through;
+    font-style: italic;
+}
