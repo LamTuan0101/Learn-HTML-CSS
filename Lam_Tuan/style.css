@@ -1,4 +1,4 @@
-p {
+.p {
     color: blue;
     /* Thuộc tính color, giá trị blue */
     font-size: 16px;
@@ -12,8 +12,111 @@ p {
     /* box-sizing: border-box; */
 }
 
-input:checked+label {
+.task1:checked+label {
     color: grey;
     text-decoration: line-through;
     font-style: italic;
+}
+
+::selection {
+    background-color: aqua;
+    color: #ff0000;
+}
+
+input::placeholder {
+    color: rgb(37, 71, 60);
+    opacity: 0.5;
+    font-style: italic;
+}
+
+:root {
+    --red-color: rgb(255, 0, 0);
+    --yelow-color: rgb(0, 56, 78);
+}
+
+h1 {
+    color: var(--red-color);
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    /* gap: 30px; */
+    border: black solid 1px;
+    justify-content: center;
+    background-color: antiquewhite;
+    padding: 0;
+    margin: 5px;
+    width: max-content;
+}
+
+li {
+    font-size: 20px;
+    margin: 5px;
+    padding: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #cfb42d;
+}
+
+a:hover {
+    color: #ff0000;
+    font-size: 25px;
+}
+
+.container {
+    display: flex;
+    height: 200px;
+    border: 3px solid black;
+    margin-bottom: 20px;
+    align-items: end;
+    justify-content: end;
+}
+
+.box {
+    width: 80px;
+    margin: 5px;
+    color: white;
+    text-align: center;
+    font-size: 24px;
+}
+
+.small {
+    height: 50px;
+    background: red;
+}
+
+.medium {
+    height: 100px;
+    background: green;
+}
+
+.large {
+    height: 150px;
+    background: blue;
+}
+
+.container1 {
+    background-color: rgba(143, 175, 199, 0.888);
+    padding: 10px;
+    display: grid;
+    /* Tạo 3 cột theo tỉ lệ 25% - 50% - 25% */
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto;
+    gap: 15px;
+}
+
+.item {
+    border: 1px solid black;
+    padding: 5px 10px;
+    font-size: 20px;
+    background-color: #f0f0f0;
+}
+
+.it1 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    background-color: #ff0000;
 }

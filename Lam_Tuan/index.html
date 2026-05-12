@@ -40,6 +40,63 @@
         ▪ :disabled: Khi một ô nhập liệu bị khóa không cho dùng.
         ▪ :invalid: Khi dữ liệu người dùng nhập vào bị sai định dạng (chẳng hạn gõ email thiếu chữ @).
     
+    4. Nhóm Pseudo - element tương tác người dùng:
+        ▪ ::selection: Thay đổi màu nền và màu chữ khi người dùng bôi đen (quét chuột) văn bản.
+        ▪ ::placeholder: Thay đổi kiểu dáng cho dòng chữ gợi ý trong ô nhập liệu (input).
+
+-->
+
+<!-- 
+    FLEXBOX
+    Các thuộc tính cốt lõi:
+        ▪ display: flex: Kích hoạt chế độ Flex.
+        ▪ justify-content: Căn chỉnh dọc theo trục chính (trái, phải, giữa, giãn đều).
+        ▪ align-items: Căn chỉnh theo trục vuông góc.
+        ▪ flex-direction: Xếp các phần tử theo hàng (row – mặc định) hay cột (column).
+        ▪ flex-wrap: Cho phép phần tử tràn xuống dòng hay không.
+        ▪ flex-flow: là sự kết hợp của flex-direction và flex-wrap.
+    
+        "justify-content" có các giá trị: (thay từng giá trị vào class "container" xem kết quả) 
+            ▪ flex-start (mặc định): Các phần tử dồn về bên trái. 
+                vd: | 1 2 3                         |
+            ▪ flex-end: Các phần tử dồn về bên phải. 
+                vd: |                         1 2 3 |
+            ▪ center: Các phần tử được gom lại và đặt chính giữa hàng.
+                vd: |          1 2 3               |
+            ▪ space-around: Khoảng trống được chia đều vào hai bên của mỗi phần tử.
+                vd: |   1       2       3   |
+            ▪ space-between: Khoảng trống nằm giữa các phần tử.
+                vd: |1            2             3|
+            ▪ space-evenly: Mọi khoảng cách đều bằng nhau tuyệt đối.
+                vd: |    1      2      3    |
+        
+        "align-items" có các giá trị: (thay từng giá trị vào class "container" xem kết quả)
+            ▪ stretch: Các phần tử con sẽ tự động "giãn" ra để lấp đầy toàn bộ chiều cao (hoặc chiều rộng, tùy trục) của phần tử cha.
+            ▪ center: Các phần tử được căn chính giữa theo trục vuông góc. Kết hợp với justify-content: center để căn một phần tử vào đúng tâm của khung hình.
+            ▪ flex-start: Các phần tử được dồn về phía bắt đầu của trục vuông góc. Nếu dàn hàng ngang, chúng sẽ "dính" lên đỉnh.
+            ▪ flex-end: Các phần tử được dồn về phía kết thúc của trục vuông góc. Nếu dàn hàng ngang, chúng sẽ "chạm sàn".
+            ▪ baseline: Các phần tử được căn chỉnh sao cho đường chân chữ (baseline) của chúng thẳng hàng với nhau.
+        
+            *NOTE: 
+                ▪ align-items: Dùng cho một hàng duy nhất. Nó căn chỉnh các phần tử bên trong hàng đó.
+                ▪ align-content: Chỉ dùng khi có nhiều hàng (khi dùng flex-wrap: wrap). Nó căn chỉnh khoảng cách giữa các hàng với nhau.
+
+        "flex-direction" có các giá trị:
+            ▪ row (Mặc định): Xếp từ trái sang phải.
+            ▪ row-reverse: Xếp từ phải sang trái (phần tử số 1 sẽ nằm ngoài cùng bên phải).
+            ▪ column: Xếp từ trên xuống dưới (biến hàng ngang thành cột dọc).
+            ▪ column-reverse: Xếp từ dưới lên trên.
+
+        "flex-wrap" có các giá trị:
+            ▪ nowrap (Mặc định): Tất cả dồn vào 1 hàng. Có thể gây tràn hoặc méo phần tử.
+            ▪ wrap: Nếu hết chỗ, phần tử tự động nhảy xuống hàng tiếp theo. Đây là giá trị
+            "vàng" để làm danh sách sản phẩm trên Web.
+            ▪ wrap-reverse: Thay vì xuống dưới, phần tử mới sẽ nhảy lên... phía trên.
+-->
+
+<!-- 
+    GRID
+
 -->
 
 <body>
@@ -47,8 +104,50 @@
     <p class="p">Huy Tuan is not intelligent</p>
 
     <!-- Psoudo ex3 -->
-    <input type="checkbox" id="task1">
+    <input type="checkbox" class="task1">
     <label for="task1">Hoàn thành bài tập CSS</label>
+    <br>
+    <!-- Psoudo ex4 -->
+    <input type="text" class="task2" placeholder="Find something...?">
+    <p>
+        Cảm ơn mọi người đã chờ đợi phần cuối cùng của 'Yên' EP, mọi người thấy thế nào ạ? Khi đã xem xong Đôi Mươi rồi, mong mọi người xem lại full EP 'Yên' theo thứ tự 1-2-3 nhé, Dũng cam đoan là mọi người sẽ có một trải nghiệm khác. Love
+    </p>
+
+    <!-- FLEXBOX -->
+    <nav>
+        <ul>
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#">Giới thiệu</a></li>
+            <li><a href="#">Dịch vụ</a></li>
+            <li><a href="#">Liên hệ</a></li>
+        </ul>
+    </nav>
+
+    <!-- Flex -->
+    <div class="container">
+        <div class="box small">1</div>
+        <div class="box medium">2</div>
+        <div class="box large">3</div>
+    </div>
+
+
+    <!-- Grid -->
+    <section class="container1">
+        <div class="item it1">Box 1</div>
+        <div class="item it2">Box 2</div>
+        <div class="item it3">Box 3</div>
+        <div class="item it4">Box 4</div>
+        <div class="item it5">Box 5</div>
+    </section>
+
+    <section class="content"></section>
+    <div class="item it1">Box 1</div>
+    <div class="item it2">Box 2</div>
+    <div class="item it3">Box 3</div>
+    <div class="item it4">Box 4</div>
+    <div class="item it5">Box 5</div>
+    </section>
+
 </body>
 
 </html>
